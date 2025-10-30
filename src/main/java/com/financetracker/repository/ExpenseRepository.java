@@ -37,4 +37,20 @@ public interface ExpenseRepository extends JpaRepository<Expense, Long> {
     BigDecimal getTotalSpentByUserInDateRange(@Param("user") User user, 
                                             @Param("startDate") LocalDateTime startDate, 
                                             @Param("endDate") LocalDateTime endDate);
+    
+    @Query("SELECT e FROM Expense e WHERE e.user.id = :userId AND DATE(e.expenseDate) = :date")
+    List<Expense> findByUserIdAndDate(@Param("userId") Long userId, @Param("date") java.time.LocalDate date);
+    
+    @Query("SELECT SUM(e.amount) FROM Expense e WHERE e.user.id = :userId AND DATE(e.expenseDate) = :date")
+    BigDecimal getDailyExpensesByUserId(@Param("userId") Long userId, @Param("date") java.time.LocalDate date);
+    
+    @Query("SELECT SUM(e.amount) FROM Expense e WHERE e.user.id = :userId AND DATE(e.expenseDate) BETWEEN :startDate AND :endDate")
+    BigDecimal getTotalExpensesByUserIdAndDateRange(@Param("userId") Long userId, 
+                                                   @Param("startDate") java.time.LocalDate startDate, 
+                                                   @Param("endDate") java.time.LocalDate endDate);
+    
+    @Query("SELECT e FROM Expense e WHERE e.user.id = :userId AND DATE(e.expenseDate) BETWEEN :startDate AND :endDate")
+    List<Expense> findByUserIdAndDateBetween(@Param("userId") Long userId, 
+                                           @Param("startDate") java.time.LocalDate startDate, 
+                                           @Param("endDate") java.time.LocalDate endDate);
 }

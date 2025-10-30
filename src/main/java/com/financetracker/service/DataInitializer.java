@@ -1,7 +1,9 @@
 package com.financetracker.service;
 
 import com.financetracker.model.Category;
+import com.financetracker.model.IncomeCategory;
 import com.financetracker.repository.CategoryRepository;
+import com.financetracker.repository.IncomeCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -11,10 +13,14 @@ public class DataInitializer implements CommandLineRunner {
 
     @Autowired
     private CategoryRepository categoryRepository;
+    
+    @Autowired
+    private IncomeCategoryRepository incomeCategoryRepository;
 
     @Override
     public void run(String... args) throws Exception {
         initializeDefaultCategories();
+        initializeDefaultIncomeCategories();
     }
 
     private void initializeDefaultCategories() {
@@ -35,10 +41,33 @@ public class DataInitializer implements CommandLineRunner {
         }
     }
 
+    private void initializeDefaultIncomeCategories() {
+        if (incomeCategoryRepository.count() == 0) {
+            // Create default income categories
+            createIncomeCategory("Salary", "Regular salary income", "💼", "#10AC84");
+            createIncomeCategory("Freelance", "Freelance work income", "🖥️", "#00D2D3");
+            createIncomeCategory("Investment", "Investment returns and dividends", "📊", "#5F27CD");
+            createIncomeCategory("Business", "Business income and profits", "🏢", "#FF6348");
+            createIncomeCategory("Rental", "Rental property income", "🏠", "#FFA502");
+            createIncomeCategory("Side Hustle", "Side gig earnings", "🚀", "#3742FA");
+            createIncomeCategory("Bonus", "Work bonuses and incentives", "🎯", "#2ED573");
+            createIncomeCategory("Gift", "Gifts and monetary presents", "🎁", "#FF4757");
+            createIncomeCategory("Refund", "Tax refunds and cashbacks", "💳", "#1E90FF");
+            createIncomeCategory("Other", "Other sources of income", "💰", "#A4B0BE");
+        }
+    }
+
     private void createCategory(String name, String description, String iconName, String colorCode) {
         if (!categoryRepository.existsByName(name)) {
             Category category = new Category(name, description, iconName, colorCode);
             categoryRepository.save(category);
+        }
+    }
+    
+    private void createIncomeCategory(String name, String description, String iconName, String colorCode) {
+        if (!incomeCategoryRepository.existsByName(name)) {
+            IncomeCategory incomeCategory = new IncomeCategory(name, description, iconName, colorCode);
+            incomeCategoryRepository.save(incomeCategory);
         }
     }
 }

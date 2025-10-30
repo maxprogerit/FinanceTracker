@@ -195,6 +195,30 @@ public class ExpenseService {
 
         expenseRepository.delete(expense);
     }
+    
+    public List<ExpenseResponse> getExpensesByDate(Long userId, java.time.LocalDate date) {
+        List<Expense> expenses = expenseRepository.findByUserIdAndDate(userId, date);
+        return expenses.stream()
+            .map(this::convertToResponse)
+            .collect(Collectors.toList());
+    }
+    
+    public BigDecimal getDailyExpensesByUserId(Long userId, java.time.LocalDate date) {
+        BigDecimal result = expenseRepository.getDailyExpensesByUserId(userId, date);
+        return result != null ? result : BigDecimal.ZERO;
+    }
+    
+    public BigDecimal getTotalExpensesByUserIdAndDateRange(Long userId, java.time.LocalDate startDate, java.time.LocalDate endDate) {
+        BigDecimal result = expenseRepository.getTotalExpensesByUserIdAndDateRange(userId, startDate, endDate);
+        return result != null ? result : BigDecimal.ZERO;
+    }
+    
+    public List<ExpenseResponse> getExpensesByDateRange(Long userId, java.time.LocalDate startDate, java.time.LocalDate endDate) {
+        List<Expense> expenses = expenseRepository.findByUserIdAndDateBetween(userId, startDate, endDate);
+        return expenses.stream()
+            .map(this::convertToResponse)
+            .collect(Collectors.toList());
+    }
 
     private ExpenseResponse convertToResponse(Expense expense) {
         ExpenseResponse response = new ExpenseResponse();
