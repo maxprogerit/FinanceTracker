@@ -2,10 +2,14 @@ package com.financetracker.service;
 
 import com.financetracker.model.Category;
 import com.financetracker.model.IncomeCategory;
+import com.financetracker.model.User;
+import com.financetracker.model.Role;
 import com.financetracker.repository.CategoryRepository;
 import com.financetracker.repository.IncomeCategoryRepository;
+import com.financetracker.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,11 +20,18 @@ public class DataInitializer implements CommandLineRunner {
     
     @Autowired
     private IncomeCategoryRepository incomeCategoryRepository;
+    
+    @Autowired
+    private UserRepository userRepository;
+    
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public void run(String... args) throws Exception {
         initializeDefaultCategories();
         initializeDefaultIncomeCategories();
+        initializeAdminUser();
     }
 
     private void initializeDefaultCategories() {
@@ -68,6 +79,24 @@ public class DataInitializer implements CommandLineRunner {
         if (!incomeCategoryRepository.existsByName(name)) {
             IncomeCategory incomeCategory = new IncomeCategory(name, description, iconName, colorCode);
             incomeCategoryRepository.save(incomeCategory);
+        }
+    }
+    
+    private void initializeAdminUser() {
+        // Create default admin user if no admin exists
+        if (userRepository.count() == 0) {
+            User admin = new User();
+            admin.setUsername("admin");
+            admin.setEmail("admin@financetracker.com");
+            admin.setPassword(passwordEncoder.encode("admin123"));
+            admin.setFirstName("System");
+            admin.setLastName("Administrator");
+            admin.setRole(Role.ADMIN);
+            
+            userRepository.save(admin);
+            System.out.println("Default admin user created:");
+            System.out.println("Username: admin");
+            System.out.println("Password: admin123");
         }
     }
 }

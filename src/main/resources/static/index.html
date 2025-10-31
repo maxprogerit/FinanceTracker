@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,66 +11,73 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
-        
+
         .glass {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .revolut-card {
             background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-        
+
         .balance-card {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 20px;
             color: white;
         }
-        
+
         .transaction-item {
             transition: all 0.3s ease;
         }
-        
+
         .transaction-item:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        
+
         .btn-primary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border: none;
             transition: all 0.3s ease;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
         }
-        
-        .hidden { display: none; }
-        .show { display: block; }
+
+        .hidden {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
     </style>
 </head>
+
 <body class="bg-gray-900 text-white">
     <!-- Navigation -->
     <nav class="glass fixed top-0 left-0 right-0 z-50 p-4">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-4">
-                <div class="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-600 rounded-lg flex items-center justify-center">
+                <div
+                    class="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-600 rounded-lg flex items-center justify-center">
                     <i class="fas fa-wallet text-white"></i>
                 </div>
                 <h1 class="text-xl font-bold">Finance Tracker</h1>
             </div>
-            
+
             <div id="user-info" class="hidden">
                 <div class="flex items-center space-x-4">
                     <span id="username-display" class="text-sm"></span>
@@ -90,18 +98,22 @@
                 <form id="login-form-element">
                     <div class="mb-4">
                         <label class="block text-gray-300 text-sm font-medium mb-2">Username or Email</label>
-                        <input type="text" id="login-username" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500" required>
+                        <input type="text" id="login-username"
+                            class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                            required>
                     </div>
                     <div class="mb-6">
                         <label class="block text-gray-300 text-sm font-medium mb-2">Password</label>
-                        <input type="password" id="login-password" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500" required>
+                        <input type="password" id="login-password"
+                            class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                            required>
                     </div>
                     <button type="submit" class="w-full btn-primary text-white py-3 rounded-lg font-medium">
                         Sign In
                     </button>
                 </form>
                 <p class="text-center mt-4 text-gray-400">
-                    Don't have an account? 
+                    Don't have an account?
                     <a href="#" id="show-signup" class="text-blue-400 hover:text-blue-300">Sign Up</a>
                 </p>
             </div>
@@ -112,30 +124,38 @@
                 <form id="signup-form-element">
                     <div class="mb-4">
                         <label class="block text-gray-300 text-sm font-medium mb-2">Username</label>
-                        <input type="text" id="signup-username" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500" required>
+                        <input type="text" id="signup-username"
+                            class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                            required>
                     </div>
                     <div class="mb-4">
                         <label class="block text-gray-300 text-sm font-medium mb-2">Email</label>
-                        <input type="email" id="signup-email" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500" required>
+                        <input type="email" id="signup-email"
+                            class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                            required>
                     </div>
                     <div class="mb-4">
                         <label class="block text-gray-300 text-sm font-medium mb-2">First Name</label>
-                        <input type="text" id="signup-firstname" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500">
+                        <input type="text" id="signup-firstname"
+                            class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500">
                     </div>
                     <div class="mb-4">
                         <label class="block text-gray-300 text-sm font-medium mb-2">Last Name</label>
-                        <input type="text" id="signup-lastname" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500">
+                        <input type="text" id="signup-lastname"
+                            class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500">
                     </div>
                     <div class="mb-6">
                         <label class="block text-gray-300 text-sm font-medium mb-2">Password</label>
-                        <input type="password" id="signup-password" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500" required>
+                        <input type="password" id="signup-password"
+                            class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                            required>
                     </div>
                     <button type="submit" class="w-full btn-primary text-white py-3 rounded-lg font-medium">
                         Sign Up
                     </button>
                 </form>
                 <p class="text-center mt-4 text-gray-400">
-                    Already have an account? 
+                    Already have an account?
                     <a href="#" id="show-login" class="text-blue-400 hover:text-blue-300">Sign In</a>
                 </p>
             </div>
@@ -153,8 +173,13 @@
                         <p id="total-balance" class="text-4xl font-bold mt-2">$0.00</p>
                         <p class="text-sm opacity-75 mt-1">Updated just now</p>
                     </div>
-                    <div class="text-right">
-                        <button id="add-expense-btn" class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg text-sm font-medium transition-all">
+                    <div class="text-right flex space-x-3">
+                        <button id="add-income-btn"
+                            class="bg-green-500 bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg text-sm font-medium transition-all">
+                            <i class="fas fa-plus mr-2"></i>Add Income
+                        </button>
+                        <button id="add-expense-btn"
+                            class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg text-sm font-medium transition-all">
                             <i class="fas fa-plus mr-2"></i>Add Expense
                         </button>
                     </div>
@@ -163,14 +188,25 @@
 
             <!-- Navigation Tabs -->
             <div class="flex space-x-4 mb-8">
-                <button id="tab-expenses" class="tab-btn active bg-blue-600 px-6 py-3 rounded-lg font-medium transition-all">
+                <button id="tab-expenses"
+                    class="tab-btn active bg-blue-600 px-6 py-3 rounded-lg font-medium transition-all">
                     Expenses
                 </button>
-                <button id="tab-budgets" class="tab-btn bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg font-medium transition-all">
+                <button id="tab-incomes"
+                    class="tab-btn bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg font-medium transition-all">
+                    Incomes
+                </button>
+                <button id="tab-budgets"
+                    class="tab-btn bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg font-medium transition-all">
                     Budgets
                 </button>
-                <button id="tab-analytics" class="tab-btn bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg font-medium transition-all">
+                <button id="tab-analytics"
+                    class="tab-btn bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg font-medium transition-all">
                     Analytics
+                </button>
+                <button id="tab-admin"
+                    class="tab-btn bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg font-medium transition-all">
+                    <i class="fas fa-cog mr-2"></i>Admin
                 </button>
             </div>
 
@@ -189,11 +225,51 @@
                 </div>
             </div>
 
+            <!-- Incomes Tab -->
+            <div id="incomes-tab" class="tab-content hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    <!-- Income Categories -->
+                    <div class="revolut-card p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold text-white">Income Categories</h3>
+                            <button id="add-income-category-btn"
+                                class="btn-primary px-4 py-2 rounded-lg text-sm font-medium">
+                                <i class="fas fa-plus mr-2"></i>Add Category
+                            </button>
+                        </div>
+                        <div id="income-categories-list" class="space-y-4">
+                            <!-- Income categories will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Recent Incomes -->
+                    <div class="revolut-card p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold text-white">Recent Income</h3>
+                            <button id="filter-incomes" class="text-gray-400 hover:text-white">
+                                <i class="fas fa-filter"></i>
+                            </button>
+                        </div>
+                        <div id="incomes-list" class="space-y-4">
+                            <!-- Incomes will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Budgets Tab -->
             <div id="budgets-tab" class="tab-content hidden">
+                <!-- Monthly Budget Allocation -->
+                <div class="revolut-card p-6 mb-8">
+                    <div id="monthly-budget-display">
+                        <!-- Monthly budget allocation will be displayed here -->
+                    </div>
+                </div>
+
+                <!-- Category-specific Budgets -->
                 <div class="revolut-card p-6">
                     <div class="flex justify-between items-center mb-6">
-                        <h3 class="text-xl font-bold text-white">Budget Overview</h3>
+                        <h3 class="text-xl font-bold text-white">Category Budgets</h3>
                         <button id="add-budget-btn" class="btn-primary px-4 py-2 rounded-lg text-sm font-medium">
                             <i class="fas fa-plus mr-2"></i>Add Budget
                         </button>
@@ -217,7 +293,58 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Admin Tab -->
+            <div id="admin-tab" class="tab-content hidden">
+                <div class="space-y-8">
+                    <!-- System Statistics -->
+                    <div class="revolut-card p-6">
+                        <h3 class="text-xl font-bold text-white mb-6">System Statistics</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="system-stats">
+                            <!-- Stats will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Users Management -->
+                    <div class="revolut-card p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold text-white">All Users</h3>
+                            <button id="refresh-users" class="btn-primary px-4 py-2 rounded-lg">
+                                <i class="fas fa-refresh mr-2"></i>Refresh
+                            </button>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-white">
+                                <thead>
+                                    <tr class="border-b border-gray-700">
+                                        <th class="text-left p-3">User</th>
+                                        <th class="text-left p-3">Email</th>
+                                        <th class="text-left p-3">Total Income</th>
+                                        <th class="text-left p-3">Total Expenses</th>
+                                        <th class="text-left p-3">Balance</th>
+                                        <th class="text-left p-3">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="users-table">
+                                    <!-- Users will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Category Usage -->
+                    <div class="revolut-card p-6">
+                        <h3 class="text-xl font-bold text-white mb-6">Category Usage Statistics</h3>
+                        <div id="category-usage" class="space-y-4">
+                            <!-- Category usage will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+    </div>
+    </div>
     </div>
 
     <!-- Add Expense Modal -->
@@ -232,21 +359,29 @@
             <form id="expense-form">
                 <div class="mb-4">
                     <label class="block text-gray-300 text-sm font-medium mb-2">Amount</label>
-                    <input type="number" step="0.01" id="expense-amount" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500" required>
+                    <input type="number" step="0.01" id="expense-amount"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                        required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-300 text-sm font-medium mb-2">Description</label>
-                    <input type="text" id="expense-description" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500" required>
+                    <input type="text" id="expense-description"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                        required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-300 text-sm font-medium mb-2">Category</label>
-                    <select id="expense-category" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500" required>
+                    <select id="expense-category"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                        required>
                         <option value="">Select Category</option>
                     </select>
                 </div>
                 <div class="mb-6">
                     <label class="block text-gray-300 text-sm font-medium mb-2">Notes (Optional)</label>
-                    <textarea id="expense-notes" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500" rows="3"></textarea>
+                    <textarea id="expense-notes"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                        rows="3"></textarea>
                 </div>
                 <button type="submit" class="w-full btn-primary text-white py-3 rounded-lg font-medium">
                     Add Expense
@@ -267,21 +402,29 @@
             <form id="budget-form">
                 <div class="mb-4">
                     <label class="block text-gray-300 text-sm font-medium mb-2">Budget Name</label>
-                    <input type="text" id="budget-name" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500" required>
+                    <input type="text" id="budget-name"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                        required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-300 text-sm font-medium mb-2">Budget Limit</label>
-                    <input type="number" step="0.01" id="budget-limit" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500" required>
+                    <input type="number" step="0.01" id="budget-limit"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                        required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-300 text-sm font-medium mb-2">Category</label>
-                    <select id="budget-category" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500" required>
+                    <select id="budget-category"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                        required>
                         <option value="">Select Category</option>
                     </select>
                 </div>
                 <div class="mb-6">
                     <label class="block text-gray-300 text-sm font-medium mb-2">Notification Threshold (%)</label>
-                    <input type="number" id="budget-threshold" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500" value="80" min="1" max="100">
+                    <input type="number" id="budget-threshold"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                        value="80" min="1" max="100">
                 </div>
                 <button type="submit" class="w-full btn-primary text-white py-3 rounded-lg font-medium">
                     Create Budget
@@ -290,6 +433,169 @@
         </div>
     </div>
 
+    <!-- Add Income Modal -->
+    <div id="income-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="revolut-card p-6 w-full max-w-md mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-white">Add Income</h3>
+                <button id="close-income-modal" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="income-form">
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-medium mb-2">Amount</label>
+                    <input type="number" step="0.01" id="income-amount"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-green-500"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-medium mb-2">Description</label>
+                    <input type="text" id="income-description"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-green-500"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-medium mb-2">Date</label>
+                    <input type="date" id="income-date"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-green-500"
+                        required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-300 text-sm font-medium mb-2">Category</label>
+                    <select id="income-category"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-green-500"
+                        required>
+                        <option value="">Select Category</option>
+                    </select>
+                </div>
+                <button type="submit"
+                    class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-3 rounded-lg font-medium hover:from-green-600 hover:to-green-700 transition-all">
+                    Add Income
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Income Category Modal -->
+    <div id="income-category-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="revolut-card p-6 w-full max-w-md mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-white">Add Income Category</h3>
+                <button id="close-income-category-modal" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="income-category-form">
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-medium mb-2">Category Name</label>
+                    <input type="text" id="income-category-name"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-green-500"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-medium mb-2">Description</label>
+                    <textarea id="income-category-description"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-green-500"
+                        rows="2"></textarea>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-medium mb-2">Icon</label>
+                    <input type="text" id="income-category-icon"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-green-500"
+                        placeholder="💰">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-300 text-sm font-medium mb-2">Color Code</label>
+                    <input type="color" id="income-category-color"
+                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:border-green-500"
+                        value="#10b981">
+                </div>
+                <button type="submit"
+                    class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-3 rounded-lg font-medium hover:from-green-600 hover:to-green-700 transition-all">
+                    Create Category
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Budget Allocation Modal -->
+    <div id="budget-allocation-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="revolut-card p-6 w-full max-w-lg mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-white">Set Budget Allocation</h3>
+                <button id="close-budget-allocation-modal" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="mb-4 p-4 bg-blue-900 bg-opacity-30 rounded-lg">
+                <p class="text-blue-300 text-sm">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    Allocate your monthly income across different budget categories. The percentages must total 100%.
+                </p>
+            </div>
+
+            <form id="budget-allocation-form">
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <label class="block text-gray-300 text-sm font-medium mb-2">
+                            🏠 Essentials (%)
+                        </label>
+                        <input type="number" id="essentials-percentage"
+                            class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                            min="0" max="100" step="0.1" value="50">
+                        <p class="text-xs text-gray-400 mt-1">Rent, utilities, groceries, transport</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-300 text-sm font-medium mb-2">
+                            📈 Growth (%)
+                        </label>
+                        <input type="number" id="growth-percentage"
+                            class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                            min="0" max="100" step="0.1" value="25">
+                        <p class="text-xs text-gray-400 mt-1">Investments, education, business</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-300 text-sm font-medium mb-2">
+                            🛡️ Emergency Fund (%)
+                        </label>
+                        <input type="number" id="emergency-percentage"
+                            class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                            min="0" max="100" step="0.1" value="15">
+                        <p class="text-xs text-gray-400 mt-1">Emergency savings, insurance</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-300 text-sm font-medium mb-2">
+                            🎉 Leisure (%)
+                        </label>
+                        <input type="number" id="leisure-percentage"
+                            class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
+                            min="0" max="100" step="0.1" value="10">
+                        <p class="text-xs text-gray-400 mt-1">Entertainment, dining out, hobbies</p>
+                    </div>
+                </div>
+
+                <div class="mb-6 p-3 bg-gray-700 rounded-lg">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-300">Total:</span>
+                        <span id="percentage-total" class="font-bold">100.0%</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full btn-primary text-white py-3 rounded-lg font-medium">
+                    Save Allocation
+                </button>
+            </form>
+        </div>
+    </div>
+
     <script src="/js/app.js"></script>
 </body>
+
 </html>

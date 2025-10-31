@@ -1,43 +1,45 @@
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\repository\IncomeRepository.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\model\User.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\security\JwtTokenProvider.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\model\Expense.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\service\ExpenseService.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\model\Category.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\dto\ExpenseResponse.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\dto\BudgetRequest.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\dto\LoginRequest.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\controller\WebController.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\controller\ExpenseController.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\controller\CategoryController.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\controller\AuthController.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\dto\JwtResponse.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\config\SecurityConfig.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\model\IncomeCategory.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\dto\ExpenseRequest.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\dto\BudgetResponse.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\repository\IncomeCategoryRepository.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\model\Budget.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\model\Income.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\service\BudgetService.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\controller\IncomeCategoryController.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\dto\SignUpRequest.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\service\DataInitializer.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\controller\BudgetController.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\security\CustomUserDetailsService.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\service\IncomeService.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\FinanceTrackerApplication.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\service\IncomeCategoryService.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\service\AuthService.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\dto\IncomeCategoryDTO.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\dto\IncomeDTO.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\repository\AccountRepository.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\repository\CategoryRepository.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\controller\DashboardController.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\controller\IncomeController.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\repository\BudgetRepository.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\repository\UserRepository.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\security\JwtAuthenticationFilter.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\security\UserPrincipal.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\repository\ExpenseRepository.java
-C:\Users\Maxim\VS Code projects\FinanceTracker\src\main\java\com\financetracker\model\Account.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/dto/IncomeCategoryDTO.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/controller/IncomeCategoryController.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/security/JwtTokenProvider.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/controller/AuthController.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/controller/WebController.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/security/UserPrincipal.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/dto/BudgetResponse.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/model/Expense.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/dto/JwtResponse.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/dto/ExpenseRequest.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/repository/IncomeCategoryRepository.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/repository/AccountRepository.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/repository/IncomeRepository.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/model/IncomeCategory.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/dto/ExpenseResponse.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/repository/BudgetRepository.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/dto/IncomeDTO.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/repository/ExpenseRepository.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/config/SecurityConfig.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/model/Budget.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/service/IncomeService.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/dto/LoginRequest.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/service/DataInitializer.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/dto/SignUpRequest.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/repository/UserRepository.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/FinanceTrackerApplication.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/security/CustomUserDetailsService.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/service/BudgetService.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/controller/IncomeController.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/controller/AdminController.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/model/Income.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/controller/BudgetController.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/model/Role.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/service/AuthService.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/controller/ExpenseController.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/service/IncomeCategoryService.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/model/Category.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/model/User.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/controller/CategoryController.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/repository/CategoryRepository.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/model/Account.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/controller/DashboardController.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/dto/BudgetRequest.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/service/ExpenseService.java
+/Users/maxim/Documents/VSCode projects/FinanceTracker/src/main/java/com/financetracker/security/JwtAuthenticationFilter.java

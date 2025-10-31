@@ -38,10 +38,13 @@ public class User {
     
     @Column(name = "created_at")
     private LocalDateTime createdAt;
-    
-    @Column(name = "updated_at")
+     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
     
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false)
+    private Role role = Role.USER;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Expense> expenses = new HashSet<>();
     
@@ -102,4 +105,7 @@ public class User {
     
     public Set<Account> getAccounts() { return accounts; }
     public void setAccounts(Set<Account> accounts) { this.accounts = accounts; }
+    
+    public Role getRole() { return role; }
+    public void setRole(Role role) { this.role = role; }
 }

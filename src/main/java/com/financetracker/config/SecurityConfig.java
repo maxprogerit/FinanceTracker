@@ -1,7 +1,7 @@
 package com.financetracker.config;
 
-import com.financetracker.security.CustomUserDetailsService;
-import com.financetracker.security.JwtAuthenticationFilter;
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +20,10 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import java.util.Arrays;
+import com.financetracker.security.CustomUserDetailsService;
+import com.financetracker.security.JwtAuthenticationFilter;
+
+import jakarta.servlet.http.HttpServletResponse;
 
 @Configuration
 @EnableWebSecurity
@@ -60,9 +63,12 @@ public class SecurityConfig {
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(authz -> authz
                 .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/api/categories").permitAll()
+                .requestMatchers("/api/income-categories").permitAll()
+                .requestMatchers("/api/admin/**").hasRole("ADMIN") // Only ADMIN role can access admin endpoints
                 .requestMatchers("/h2-console/**").permitAll()
                 .requestMatchers("/", "/index.html").permitAll()
-                .requestMatchers("/js/**", "/css/**", "/images/**").permitAll()
+                .requestMatchers("/js/**", "/css/**", "/images/**", "/static/**").permitAll()
                 .requestMatchers("/favicon.ico", "/favicon.svg").permitAll()
                 .requestMatchers("/api/**").authenticated()
                 .anyRequest().permitAll()
@@ -70,6 +76,16 @@ public class SecurityConfig {
 
         // Disable frame options for H2 console
         http.headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable()));
+
+        // Add exception handling
+        http.exceptionHandling(exceptions -> exceptions
+            .authenticationEntryPoint((request, response, authException) -> {
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
+            })
+            .accessDeniedHandler((request, response, accessDeniedException) -> {
+                response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access Denied");
+            })
+        );
 
         http.authenticationProvider(authenticationProvider());
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);

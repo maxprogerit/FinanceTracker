@@ -1,5 +1,7 @@
 package com.financetracker.dto;
 
+import com.financetracker.model.Role;
+
 public class JwtResponse {
     private String token;
     private String type = "Bearer";
@@ -8,15 +10,17 @@ public class JwtResponse {
     private String email;
     private String firstName;
     private String lastName;
+    private Role role;
 
     public JwtResponse(String accessToken, Long id, String username, String email, 
-                      String firstName, String lastName) {
+                      String firstName, String lastName, Role role) {
         this.token = accessToken;
         this.id = id;
         this.username = username;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.role = role;
     }
 
     public String getToken() { return token; }
@@ -39,4 +43,7 @@ public class JwtResponse {
 
     public String getLastName() { return lastName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
+
+    public Role getRole() { return role; }
+    public void setRole(Role role) { this.role = role; }
 }

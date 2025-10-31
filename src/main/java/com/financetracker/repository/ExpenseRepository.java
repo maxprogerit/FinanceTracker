@@ -1,15 +1,17 @@
 package com.financetracker.repository;
 
-import com.financetracker.model.Expense;
-import com.financetracker.model.Category;
-import com.financetracker.model.User;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import java.time.LocalDateTime;
-import java.util.List;
-import java.math.BigDecimal;
+
+import com.financetracker.model.Category;
+import com.financetracker.model.Expense;
+import com.financetracker.model.User;
 
 @Repository
 public interface ExpenseRepository extends JpaRepository<Expense, Long> {
@@ -53,4 +55,6 @@ public interface ExpenseRepository extends JpaRepository<Expense, Long> {
     List<Expense> findByUserIdAndDateBetween(@Param("userId") Long userId, 
                                            @Param("startDate") java.time.LocalDate startDate, 
                                            @Param("endDate") java.time.LocalDate endDate);
+    
+    List<Expense> findByCategory(Category category);
 }
