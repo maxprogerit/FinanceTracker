@@ -1,9 +1,5 @@
 package com.financetracker.service;
 
-import com.financetracker.dto.*;
-import com.financetracker.model.User;
-import com.financetracker.repository.UserRepository;
-import com.financetracker.security.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -12,6 +8,13 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.financetracker.dto.JwtResponse;
+import com.financetracker.dto.LoginRequest;
+import com.financetracker.dto.SignUpRequest;
+import com.financetracker.model.User;
+import com.financetracker.repository.UserRepository;
+import com.financetracker.security.JwtTokenProvider;
 
 @Service
 @Transactional

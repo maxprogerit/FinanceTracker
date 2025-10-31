@@ -1,16 +1,17 @@
 package com.financetracker.service;
 
-import com.financetracker.model.Category;
-import com.financetracker.model.IncomeCategory;
-import com.financetracker.model.User;
-import com.financetracker.model.Role;
-import com.financetracker.repository.CategoryRepository;
-import com.financetracker.repository.IncomeCategoryRepository;
-import com.financetracker.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+
+import com.financetracker.model.Category;
+import com.financetracker.model.IncomeCategory;
+import com.financetracker.model.Role;
+import com.financetracker.model.User;
+import com.financetracker.repository.CategoryRepository;
+import com.financetracker.repository.IncomeCategoryRepository;
+import com.financetracker.repository.UserRepository;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
